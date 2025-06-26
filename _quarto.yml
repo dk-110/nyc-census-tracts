@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "NYC Census Tract"
+  title: "Income and Race in New York City"
   navbar:
     left:
       - href: index.qmd

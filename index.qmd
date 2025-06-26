@@ -1,7 +1,39 @@
 ---
-title: "NYC Census Tract"
+execute: 
+  echo: false
 ---
 
-This is a Quarto website.
+```{r}
+#| message: false
+#| warning: false
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Load packages
+library(tidyverse)
+library(scales)
+# Read the data
+nyc_data <- read_csv("data/nyc_tracts.csv", show_col_types = FALSE)
+```
+```{r}
+
+
+# Remove rows with NA income values for plotting
+
+ggplot(filter(nyc_data, !is.na(med_income)), aes(x = race, y = med_income, fill = race)) +
+  geom_boxplot(color = "black", outlier.color = "red") +
+  labs(
+    title = "Income Disparities Across Racial Groups in NYC",
+    subtitle = "Based on Median Income by Race in NYC Census Tracts",
+    x = "Race",
+    y = "Median Income (USD)",
+    caption = "Source: NYC Census Tracts Data",
+    fill = "Race"  # This adds a label to the legend
+  ) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold")
+  )
+```
+
+The boxplot titled "Income Disparities Across Racial Groups in NYC" visualizes the distribution of median income across different racial groups based on census tract data from New York City. Each box represents the spread of incomes within a racial category, highlighting the interquartile range (middle 50% of data), median income, and any outliers. The presence of red dots outside the boxes indicates census tracts with income values that are significantly higher or lower than the rest. This visualization makes income inequality easier to grasp by showing how some racial groups tend to have higher or lower income medians and variability than others. The chart emphasizes structural economic disparities and invites deeper investigation into the factors contributing to these imbalances. The legend at the bottom helps the viewer easily associate colors with their corresponding racial groups, improving readability.
