@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Income and Race in New York City",
+    "section": "",
+    "text": "The boxplot titled “Income Disparities Across Racial Groups in NYC” visualizes the distribution of median income across different racial groups based on census tract data from New York City. Each box represents the spread of incomes within a racial category, highlighting the interquartile range (middle 50% of data), median income, and any outliers. The presence of red dots outside the boxes indicates census tracts with income values that are significantly higher or lower than the rest. This visualization makes income inequality easier to grasp by showing how some racial groups tend to have higher or lower income medians and variability than others. The chart emphasizes structural economic disparities and invites deeper investigation into the factors contributing to these imbalances. The legend at the bottom helps the viewer easily associate colors with their corresponding racial groups, improving readability."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site was created by DK during her practice session for Kane’s Data Science Bootcamp"
+  }
+]
